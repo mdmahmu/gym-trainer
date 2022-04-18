@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "service_type": "Private Training",
+        "cost": 80,
+        "features": ["60 minutes session", "Private Gym or In-Home", "Get 1-on-1 training"]
+    },
+    
+    {
+        "id": 2,
+        "service_type": "Group Training",
+        "cost": 60,
+        "features": ["60 minutes session", "Private Gym or In-Home", "Get 1-on-1 training"]
+    },
+    
+    {
+        "id":3,
+        "service_type": "Athlete Training",
+        "cost": 119,
+        "features": ["60 minutes session", "Private Gym or In-Home", "Get 1-on-1 training"]
+    }    
+]

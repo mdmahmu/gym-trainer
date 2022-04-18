@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { NavLink, useMatch, useParams, useResolvedPath } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../../../logo.png';
 
 const Header = () => {
-
+    const homeMenu = true;
+    const servicesMenu = true;
     return (
         <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
             <Container>
@@ -13,7 +14,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={NavLink} to="/home" style={({ isActive }) => { return { backgroundColor: isActive ? '#ff3333' : '' }; }}>Home</Nav.Link>
-                        <Nav.Link as={NavLink} to="home#services" style={({ isActive }) => { return { backgroundColor: isActive ? '#ff3333' : '' }; }}>Services</Nav.Link>
+
                         <Nav.Link as={NavLink} to="/blogs" style={({ isActive }) => { return { backgroundColor: isActive ? '#ff3333' : '' }; }}>Blogs</Nav.Link>
                         <Nav.Link as={NavLink} to="/about" style={({ isActive }) => { return { backgroundColor: isActive ? '#ff3333' : '' }; }}>About</Nav.Link>
 
