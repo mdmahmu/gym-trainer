@@ -28,10 +28,8 @@ const Header = () => {
                                     <>
                                         <Nav.Link as={NavLink} to="/register" style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }}>Register</Nav.Link>
                                         <Nav.Link as={NavLink} to="/login" style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }} onClick={() => signOut(auth)}>Login</Nav.Link>
-
                                     </>
                             }
-
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

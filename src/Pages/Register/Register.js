@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
 import { toast, ToastContainer } from "react-toastify";
@@ -11,20 +11,34 @@ const Register = () => {
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const confirmPasswordRef = useRef('');
+    const [agree, setAgree] = useState(false);
+    const navigate = useNavigate();
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleRegister = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        createUserWithEmailAndPassword(email, password);
-        toast('You account has been created.');
+        const confirmPassword = confirmPasswordRef.current.value;
+
+        if (password === confirmPassword) {
+            createUserWithEmailAndPassword(email, password);
+            if (error) {
+                alert(error.message);
+            } else {
+                navigate('/');
+            }
+        }
+        else {
+            toast('Error. Both password did not match.');
+        }
     };
 
     return (
@@ -48,12 +62,14 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword2">
                     <Form.Label>Confirm password</Form.Label>
-                    <Form.Control type="password" placeholder="Confirm password" required />
+                    <Form.Control ref={confirmPasswordRef} type="password" placeholder="Confirm password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="I agree to the terms and conditions." />
+                    <Form.Check type="checkbox" onClick={() => setAgree(!agree)} label="I agree to the terms and conditions." />
                 </Form.Group>
-                <Button variant="info" type="submit" className="px-3">Register</Button>
+                {
+                    <Button variant={!agree ? "light" : "info"} type="submit" className="px-3" disabled={!agree}>Register</Button>
+                }
             </Form>
             <br />
             <p>Already registered ? <NavLink to='/login' className="text-danger text-decoration-none" >Login</NavLink></p>
