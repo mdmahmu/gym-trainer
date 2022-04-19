@@ -2,6 +2,7 @@
     {
         "id": 1,
         "service_type": "Private Training",
+        "img":"https://img.freepik.com/free-photo/trainer-man-lying-lifting-dumbbells-gym_1262-16635.jpg?t=st=1650388580~exp=1650389180~hmac=f1a51df168edc7ff44e0d2fca6eb071aabc7de4cb033bc547f0b3a3e90749735&w=250",
         "cost": 80,
         "features": ["60 minutes session", "Private Gym or In-Home", "Get 1-on-1 training"]
     },
@@ -9,6 +10,7 @@
     {
         "id": 2,
         "service_type": "Group Training",
+        "img":"https://img.freepik.com/free-photo/attractive-young-woman-her-trainer-running-treadmill-gym_496169-2730.jpg?t=st=1650388580~exp=1650389180~hmac=a28490e9b4a37353b9068dc08d6ef7999e117af760c49f1643f28e38d979e3b0&w=250",
         "cost": 60,
         "features": ["60 minutes session", "Private Gym or In-Home", "Get 1-on-1 training"]
     },
@@ -16,6 +18,7 @@
     {
         "id":3,
         "service_type": "Athlete Training",
+        "img":"https://img.freepik.com/free-photo/young-healthy-man-athlete-doing-exercise-with-ropes-gym-single-male-model-practicing-hard-training-his-upper-body-concept-healthy-lifestyle-sport-fitness-bodybuilding-wellbeing_155003-27879.jpg?t=st=1650388580~exp=1650389180~hmac=a2d026cee43abcace52216b6a727f77cbc2ab94e41f92b159f82ff215851375f&w=250",
         "cost": 119,
         "features": ["60 minutes session", "Private Gym or In-Home", "Get 1-on-1 training"]
     }    

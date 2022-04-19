@@ -29,7 +29,6 @@ const GoogleLogin = () => {
             <div className="d-flex justify-content-center">
                 <Button variant="outline-dark" onClick={() => signInWithGoogle()}> <img src={googleLogo} alt="google logo" /> Sign In With Google</Button>
             </div>
-
         </div>
     );
 };
