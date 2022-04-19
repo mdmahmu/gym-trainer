@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                             features.map(feature => <li>{feature}</li>)
                         }
                     </div>
-                    <Button variant="secondary" className="px-4">Book Now</Button>
+                    <Button variant="info" className="px-4">Book Now</Button>
                 </div>
             </div>
         </Col>
