@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import GoogleLogin from "../Shared/SocialLogin/GoogleLogin/GoogleLogin";
 
 
 const Register = () => {
@@ -74,6 +75,7 @@ const Register = () => {
             <br />
             <p>Already registered ? <NavLink to='/login' className="text-danger text-decoration-none" >Login</NavLink></p>
             <ToastContainer />
+            <GoogleLogin></GoogleLogin>
         </div>
     );
 };

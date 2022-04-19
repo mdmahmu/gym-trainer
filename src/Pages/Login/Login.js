@@ -4,13 +4,13 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
+import GoogleLogin from "../Shared/SocialLogin/GoogleLogin/GoogleLogin";
 
 const Login = () => {
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,6 +29,8 @@ const Login = () => {
 
     const handleLogin = event => {
         event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
     };
 
@@ -43,7 +45,6 @@ const Login = () => {
             toast('Enter your email first');
         }
     };
-
 
     if (user) {
         navigate(from, { replace: true });
@@ -69,6 +70,8 @@ const Login = () => {
             <p>Forgot password ?<Button variant="link" className="text-decoration-none text-danger" onClick={handleResetPassword}>Click here to reset</Button></p>
             <p>New to GYM TRAINER ? <NavLink to='/register' className="text-danger text-decoration-none" >Create an account</NavLink></p>
             <ToastContainer />
+
+            <GoogleLogin></GoogleLogin>
         </div>
     );
 };
