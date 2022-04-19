@@ -42,6 +42,12 @@ const Register = () => {
         }
     };
 
+    let errorMsg;
+    if (error) {
+        errorMsg = <p className="text-danger">Error : {error?.message}</p>;
+    }
+
+
     return (
         <div className="w-50 mx-auto my-4">
             <h1 className="text-center text-danger">Registration</h1>
@@ -68,6 +74,8 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" onClick={() => setAgree(!agree)} label="I agree to the terms and conditions." />
                 </Form.Group>
+
+                {errorMsg}
                 {
                     <Button variant={!agree ? "light" : "info"} type="submit" className="px-3" disabled={!agree}>Register</Button>
                 }

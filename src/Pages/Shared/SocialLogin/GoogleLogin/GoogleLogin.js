@@ -9,6 +9,11 @@ const GoogleLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
 
+    let errorMsg;
+    if (error) {
+        errorMsg = <p className="text-danger">Error : {error?.message}</p>;
+    }
+
     if (user) {
         navigate('/');
     }
@@ -20,6 +25,7 @@ const GoogleLogin = () => {
                 <p className="ms-3 me-3 bold">OR</p>
                 <hr className="w-25" />
             </div>
+            {errorMsg}
             <div className="d-flex justify-content-center">
                 <Button variant="outline-dark" onClick={() => signInWithGoogle()}> <img src={googleLogo} alt="google logo" /> Sign In With Google</Button>
             </div>

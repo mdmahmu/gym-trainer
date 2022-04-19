@@ -46,6 +46,12 @@ const Login = () => {
         }
     };
 
+    let errorMsg;
+    if (error) {
+        errorMsg = <p className="text-danger">Error : {error?.message}</p>;
+    }
+
+
     if (user) {
         navigate(from, { replace: true });
     }
@@ -63,7 +69,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-
+                {errorMsg}
                 <Button variant="info" type="submit" className="px-4">Login</Button>
             </Form>
             <br />
