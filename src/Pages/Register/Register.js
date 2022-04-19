@@ -3,6 +3,9 @@ import { Button, Form } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
 
@@ -21,6 +24,7 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         createUserWithEmailAndPassword(email, password);
+        toast('You account has been created.');
     };
 
     return (
@@ -53,6 +57,7 @@ const Register = () => {
             </Form>
             <br />
             <p>Already registered ? <NavLink to='/login' className="text-danger text-decoration-none" >Login</NavLink></p>
+            <ToastContainer />
         </div>
     );
 };

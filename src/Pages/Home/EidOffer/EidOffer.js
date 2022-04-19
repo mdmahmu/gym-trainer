@@ -9,8 +9,8 @@ const EidOffer = () => {
             <h1 className="text-danger text-center mt-4 mb-2">Eid Offer</h1>
             <div className="container">
                 <div className="row d-flex flex-md-row flex-sm-column flex-column align-items-center mx-4 card">
-                    <div className=" col-md-6 col-sm-12 col-12 my-2">
-                        <img src={eid_offer} alt="discount img" className="img-fluid rounded p-2" />
+                    <div className="col-md-6 col-sm-12 col-12 my-2">
+                        <img src={eid_offer} alt="discount img" className="img-fluid p-2 rounded-circle" />
                     </div>
                     <div className="col-md-6 col-sm-6 col-12 px-sm-0 px-3">
                         <h2 className="mt-2">Book now and</h2>

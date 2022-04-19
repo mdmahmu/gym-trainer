@@ -24,7 +24,7 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/checkout" style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }}>Checkout</Nav.Link>
 
                             {
-                                user ? <Nav.Link to='/' as={NavLink} style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }} onClick={() => signOut(auth)}>Log out</Nav.Link> :
+                                user ? <Nav.Link as={NavLink} to='/login' style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }} onClick={() => signOut(auth)}>Log out</Nav.Link> :
                                     <>
                                         <Nav.Link as={NavLink} to="/register" style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }}>Register</Nav.Link>
                                         <Nav.Link as={NavLink} to="/login" style={({ isActive }) => { return { borderBottom: isActive ? '3px solid #dc3545' : '' }; }} onClick={() => signOut(auth)}>Login</Nav.Link>
